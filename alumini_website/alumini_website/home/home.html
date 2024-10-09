@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <title>surana college Alumini webpage</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+  
+    <link rel="stylesheet" href="home.css" />
+    <script src="./home.js"></script>
+    <style>
+      /* Full-width input fields */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      /* Set a style for all buttons */
+      button {
+        background-color: #04aa6d;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
+
+      /* Center the image and position the close button */
+      .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+      }
+
+      img.avatar {
+        width: 40%;
+        border-radius: 50%;
+      }
+
+      .container {
+        padding: 16px;
+      }
+
+      span.psw {
+        float: right;
+        padding-top: 16px;
+      }
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        padding-top: 20px;
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+        width: 400px;
+        background-color: #fefefe;
+        margin: 4% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+
+      /* The Close Button (x) */
+      .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: red;
+        cursor: pointer;
+      }
+
+      /* Add Zoom Animation */
+      .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s;
+      }
+
+      @-webkit-keyframes animatezoom {
+        from {
+          -webkit-transform: scale(0);
+        }
+        to {
+          -webkit-transform: scale(1);
+        }
+      }
+
+      @keyframes animatezoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        span.psw {
+          display: block;
+          float: none;
+        }
+        .cancelbtn {
+          width: 100%;
+        }
+      }
+      .container-log{
+        margin-top: -6%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="bgimg">
+    <section class="main" style="background-image: url(images/hero-bg.png)">
+      <nav>
+        <a href="#" class="logo">
+          <img src="../components/clglogo.jpg" width="200vw" />
+        </a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+          <span class="nav-icon"></span>
+        </label>
+        <ul class="menu" style="border-radius: 5px">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Fraternities</a></li>
+          <li><a href="#tranding">Gallery</a></li>
+          <li><a href="#">Alumini Barrier</a></li>
+          <li><a href="#">About</a></li>
+          <li>
+            <a
+              class="active"
+              onclick="document.getElementById('id01').style.display='block'"
+              style="width: auto; border-radius: 5px; cursor: pointer"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- login modal start -->
+      <div id="id01" class="modal">
+        <form
+          class="modal-content animate"
+          action="/action_page.php"
+          method="post"
+          style="width: 400px"
+        >
+          <div class="imgcontainer">
+            <span
+              onclick="document.getElementById('id01').style.display='none'"
+              class="close"
+              title="Close Modal"
+              >&times;</span
+            >
+            <p style="font-size: 22px">Alumni Login</p>
+            <hr />
+          </div>
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              required
+            />
+      
+            <label for="psw"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+      
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </label>
+          </div>
+      
+          <!-- Social Media Login Buttons -->
+          <div class="container-log" style="text-align: center;">
+            <p style="font-size: 18px; margin: 10px 0;">Or Login With</p>
+            <button onclick="googleLogin()" style="background-color: #db4437; color: white; border: none; padding: 10px;">Login with Google</button>
+            <button onclick="instagramLogin()" style="background-color: #c32aa3; color: white; border: none; padding: 10px;">Login with Instagram</button>
+            <button onclick="linkedinLogin()" style="background-color: #0077b5; color: white; ;border: none; padding: 10px;">Login with LinkedIn</button>
+          </div>
+      
+          <div class="container" style="background-color: #f1f1f1">
+            <button
+              type="button"
+              onclick="document.getElementById('id01').style.display='none'"
+              class="cancelbtn"
+            >
+              Cancel
+            </button>
+            <span class="psw"><a href="#">Register Here</a></span>
+            <span class="psw" style="margin-right: 11px"
+              ><a href="#">Forgot password?</a></span
+            >
+          </div>
+        </form>
+      </div>
+      <script>
+        function googleLogin() {
+          // Redirect to Google OAuth login
+          window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile';
+        }
+      
+        function instagramLogin() {
+          // Redirect to Instagram OAuth login
+          window.location.href = 'https://api.instagram.com/oauth/authorize?client_id=YOUR_INSTAGRAM_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=user_profile';
+        }
+      
+        function linkedinLogin() {
+          // Redirect to LinkedIn OAuth login
+          window.location.href = 'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=YOUR_LINKEDIN_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=r_liteprofile%20r_emailaddress';
+        }
+      </script>
+      <!-- login modal end  -->
+
+      <!--main-content-->
+      <div class="home-content">
+        <!--text-->
+        <div class="home-text">
+          <div class="hometxt">
+          <h3 style="color: white; letter-spacing: 3px">
+            Welcome to surana college
+          </h3>
+          <h1 style="color: white">Alumini Portal</h1>
+          <p style="color: white">
+            The purpose of college Alumini is to promise to
+            enhance their intellectual, physical, social, emotional, spiritual,
+            and college growth so that they may realize their power for good as
+            citizens
+          </p>
+          <!--login-btn-->
+          <a href="#" class="main-login" style="border-radius: 5px"
+            >Explore</a
+          ></div>
+        </div>
+        <!--img-->
+        <div class="home-img" style="width: 650px">
+          <!-- <img
+            src="../components/clgimg.jpeg"
+            width="500px"
+            style="text-shadow: 20px 22px"
+          /> -->
+          <marquee class="marqtag1"
+            width="100%"
+            direction="left"
+            onmouseover="this.stop();"
+            onmouseout="this.start();"
+          >
+            <a href="#" style="color: red;"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eius nulla ullam dolorum quidem qui modi voluptas blanditiis rerum optio.</a
+            >
+          </marquee>
+          <marquee class="marqtag2"
+            width="100%"
+            direction="right"
+            onmouseover="this.stop();"
+            onmouseout="this.start();"
+          >
+            <a href="#" style="color: red;"
+              >Addmission open of 13th August 2021, Stream BCA, BBA, Bio-Tech
+              and Computer Science.</a
+            >
+          </marquee>
+        </div>
+      </div>
+    </section>
+  </div>
+
+    <!-- Gallery -->
+    <section id="tranding" class="gallery-cont">
+      <div class="container">
+        <h3 class="text-center section-subheading">Alumini Gallery</h3>
+        <!-- <h1 class="text-center section-heading">Tranding food</h1> -->
+      </div>
+      <div class="container">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="../components/img1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">ceo</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    ROHAN
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>2012</span>
+                    <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione.</p>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="../components/img1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">MCA</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    KIRAN
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>2014</span>
+                    <div class="description">
+                    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolor!</P>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="../components/img1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">MCA</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    KEETHI
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>2015</span>
+                    <div class="description">
+                      <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, itaque.</P>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="../components/img1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">MCA</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    ADITHYA
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>2016</span>
+                    <div class="description">
+                     <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, vel.</P>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="../components/img1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">MCA</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    CHNADAN
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>2018</span>
+                    <div class="description">
+                     <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, autem!</P>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="../components/img1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">MCA</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    SANJANA
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>2020</span>
+                    <div class="description">
+                      <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatum.</P>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="../components/img1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">MCA</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    KOUSHIK
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>2021</span>
+                    <div class="description">
+                      <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, provident?</P>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+          </div>
+
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--  -->
+
+    <!-- about  -->
+     <section id="about-sec">
+     <div class="aboutt" id="abt">
+      <div class="l-cont">
+        <h2 class="about-head">About US</h2>
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus debitis cumque perferendis dignissimos optio incidunt voluptatibus tempore, ipsam asperiores necessitatibus! Magni?</p>
+      </div>
+     </div>
+    </section>
+
+    <!--footer------------->
+    <footer>
+      <div class="section">
+          <strong>COMPANY</strong>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Brand Center</a>
+          <a href="#">Blog</a>
+      </div>
+      <div class="section">
+          <strong>HELP CENTER</strong>
+          <a href="#">Discord Server</a>
+          <a href="#">Twitter</a>
+          <a href="#">Facebook</a>
+          <a href="#">Contact Us</a>
+      </div>
+      <div class="section">
+          <strong>LEGAL</strong>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Licensing</a>
+          <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="section">
+          <strong>DOWNLOAD</strong>
+          <a href="#">iOS</a>
+          <a href="#">Android</a>
+          <a href="#">Windows</a>
+          <a href="#">MacOS</a>
+      </div>
+      <div id="designedby">
+          <p style="color: white;">© 2024 MCA™. All Rights Reserved.</p>
+      </div>
+  </footer>
+
+<!-- <footer style="background-color: #1b2151; color: rgb(255, 255, 255);" class="bg-white dark:bg-gray-900" style="color:rgb(255, 255, 255); background-color: rgb(26, 26, 76);">
+  <div class="mx-auto w-full max-w-screen-xl">
+    <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+      <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                  <a href="#" class=" hover:underline">About</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Careers</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Brand Center</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Blog</a>
+              </li>
+          </ul>
+      </div>
+      <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Discord Server</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Twitter</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Facebook</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Contact Us</a>
+              </li>
+          </ul>
+      </div>
+      <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Licensing</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+              </li>
+          </ul>
+      </div>
+      <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">iOS</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Android</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">Windows</a>
+              </li>
+              <li class="mb-4">
+                  <a href="#" class="hover:underline">MacOS</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+      </span>
+      <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+          <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                      <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                  </svg>
+                <span class="sr-only">Facebook page</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
+                      <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
+                  </svg>
+                <span class="sr-only">Discord community</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
+                  <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd"/>
+              </svg>
+                <span class="sr-only">Twitter page</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                </svg>
+                <span class="sr-only">GitHub account</span>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
+              </svg>
+                <span class="sr-only">Dribbble account</span>
+            </a>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("id01");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  </body>
+</html>
